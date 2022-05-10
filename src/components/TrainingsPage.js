@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import Snackbar from '@mui/material/Snackbar';
 import dayjs from 'dayjs';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -9,7 +8,6 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 function TrainingsPage() {
     const [trainings, setTrainings] = useState([]);
-    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         fetchTrainings();
@@ -38,12 +36,6 @@ function TrainingsPage() {
             suppressCellFocus={true}
             />
         </div>
-        <Snackbar
-            open={open}
-            message="Training deleted"
-            autoHideDuration={3000}
-            onClose={() => setOpen(false)}
-        />
         </>
     )
 }

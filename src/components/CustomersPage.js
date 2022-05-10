@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Snackbar from '@mui/material/Snackbar';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 function CustomersPage() {
     const [customer, setCustomer] = useState([]);
-    const [open, setOpen] = useState(false);
-    const [msg, setMsg] = useState('');
 
     useEffect(() => {
         fetchCustomers();
@@ -44,12 +39,6 @@ function CustomersPage() {
             suppressCellFocus={true}
             />
         </div>
-        <Snackbar
-            open={open}
-            message="Car deleted"
-            autoHideDuration={3000}
-            onClose={() => setOpen(false)}
-        />
         </>
     )
 }
